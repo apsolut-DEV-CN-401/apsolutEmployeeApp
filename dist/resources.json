@@ -1,0 +1,282 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/BaseController-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/BaseController.controller.js"
+        },
+        {
+            "name": "controller/Edit-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Edit.controller.js"
+        },
+        {
+            "name": "controller/NotFound.contoller-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/NotFound.contoller.js"
+        },
+        {
+            "name": "controller/addObject-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/addObject.controller.js"
+        },
+        {
+            "name": "controller/details-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/details.controller.js"
+        },
+        {
+            "name": "css/style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "image/All.png"
+        },
+        {
+            "name": "image/apsolut.jpg"
+        },
+        {
+            "name": "image/back4.png"
+        },
+        {
+            "name": "image/back5.png"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "localService/ZCDS_DEMO_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/ApsolutEmployee.json"
+        },
+        {
+            "name": "model/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "tmp/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "tmp/Component.js"
+        },
+        {
+            "name": "tmp/controller/App.controller.js"
+        },
+        {
+            "name": "tmp/controller/BaseController.controller.js"
+        },
+        {
+            "name": "tmp/controller/Edit.controller.js"
+        },
+        {
+            "name": "tmp/controller/NotFound.contoller.js"
+        },
+        {
+            "name": "tmp/controller/addObject.controller.js"
+        },
+        {
+            "name": "tmp/controller/details.controller.js"
+        },
+        {
+            "name": "tmp/css/style.css"
+        },
+        {
+            "name": "tmp/extended_runnable_file.html"
+        },
+        {
+            "name": "tmp/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "tmp/image/All.png"
+        },
+        {
+            "name": "tmp/image/apsolut.jpg"
+        },
+        {
+            "name": "tmp/image/back4.png"
+        },
+        {
+            "name": "tmp/image/back5.png"
+        },
+        {
+            "name": "tmp/index.html"
+        },
+        {
+            "name": "tmp/localService/ZCDS_DEMO_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/metadata.xml"
+        },
+        {
+            "name": "tmp/manifest.json"
+        },
+        {
+            "name": "tmp/model/ApsolutEmployee.json"
+        },
+        {
+            "name": "tmp/model/formatter.js"
+        },
+        {
+            "name": "tmp/model/models.js"
+        },
+        {
+            "name": "tmp/view/App.view.xml"
+        },
+        {
+            "name": "tmp/view/CountryDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/view/Edit.view.xml"
+        },
+        {
+            "name": "tmp/view/NotFound.view.xml"
+        },
+        {
+            "name": "tmp/view/PositionDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/view/ReportDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/view/TeamDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/view/addObject.view.xml"
+        },
+        {
+            "name": "tmp/view/details.view.xml"
+        },
+        {
+            "name": "tmp/view/objectNotFound.view.xml"
+        },
+        {
+            "name": "tmp/view/openDialog.fragment.xml"
+        },
+        {
+            "name": "tmp-dbg/Component.js"
+        },
+        {
+            "name": "tmp-dbg/controller/App.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/BaseController.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/Edit.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/NotFound.contoller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/addObject.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/details.controller.js"
+        },
+        {
+            "name": "tmp-dbg/css/style.css"
+        },
+        {
+            "name": "tmp-dbg/model/formatter.js"
+        },
+        {
+            "name": "tmp-dbg/model/models.js"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/CountryDialog.fragment.xml"
+        },
+        {
+            "name": "view/Edit.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/PositionDialog.fragment.xml"
+        },
+        {
+            "name": "view/ReportDialog.fragment.xml"
+        },
+        {
+            "name": "view/TeamDialog.fragment.xml"
+        },
+        {
+            "name": "view/addObject.view.xml"
+        },
+        {
+            "name": "view/details.view.xml"
+        },
+        {
+            "name": "view/objectNotFound.view.xml"
+        },
+        {
+            "name": "view/openDialog.fragment.xml"
+        }
+    ]
+}

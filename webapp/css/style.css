@@ -1,0 +1,32 @@
+/* Enter your custom styles here */
+
+.hello.customerTableClass {
+    font-weight: bold;
+    background-color: red;
+}
+
+.myCustomerTable {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.headingtext {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.EditBtn {
+    width: 80px;
+    padding-right: 5px;
+}
+
+.EmployeeTitle {
+    font-size: 20px;
+}
+
+.sapFDynamicPageContent
+/*, ...*/
+
+{
+    padding: 0rem 0rem 0 0rem;
+}

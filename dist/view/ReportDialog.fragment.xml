@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Report List"
+		class="sapUiPopupWithPadding"
+		items="{ReportName>/}"
+		search="ReportDialogSearch"
+		confirm="_handleReportText"
+		cancel="_handleReportDialog">
+		<StandardListItem
+			iconDensityAware="false"
+			iconInset="false"
+			title="{ReportName>name}" />
+	</SelectDialog>
+</core:FragmentDefinition>

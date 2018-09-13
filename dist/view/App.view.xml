@@ -1,0 +1,125 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f"
+	xmlns:vm="sap.ui.comp.variants" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core"
+	xmlns:btndata="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="ApsolutEmployee.controller.App"
+	displayBlock="true">
+	<App id="App" class="hello">
+		<pages>
+			<f:DynamicPage title="{i18n>title}" id="dynamicPageId" fitContent="true" showFooter="true">
+				<!--		<headerToolbar>-->
+				<!--	<Toolbar>-->
+				<!--		<Button text="create" press="createEmploee"/>-->
+				<!--		<ToolbarSpacer/>-->
+				<!--	</Toolbar>-->
+				<!--</headerToolbar>-->
+				<f:title>
+					<f:DynamicPageTitle>
+						<f:heading pinnable="false">
+							<Text text="ApsolutEmployee" class="headingtext" textAlign="Center"></Text>
+						</f:heading>
+						<f:actions>
+							<!--Emphasized  Accept-->
+							<Button text="Create" type="Transparent" press="toCreatePage" visible="true" id="createBtn"/>
+							<Button text="Delete" type="Transparent" press="deleteMode2" visible="true" id="deleteBtn"/>
+							<Button text="Cancel" type="Transparent" press="onCancel" visible="false" id="cancelBtn"/>
+						</f:actions>
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:header>
+					<f:DynamicPageHeader pinnable="true">
+						<f:content>
+							<SearchField width="100%" placeholder="Please input English name" id="search" showRefreshButton="true" showSearchButton="true"
+								enabled="true" search="onFilterProducts"/>
+							<fb:FilterBar reset="onReset" search="onSearch" showGoOnFB="false" showRestoreOnFB="false" showRestoreButton="false" useToolbar="false"
+								showClearOnFB="false" showFilterConfiguration="false">
+								<fb:filterItems>
+									<fb:FilterItem name="A" label="Country" id="filterItem1">
+										<fb:control>
+											<Select id="sCountry" forceSelection="true" change="onSelectChange"></Select>
+										</fb:control>
+									</fb:FilterItem>
+									<fb:FilterItem name="B" label="Team" id="filterItem2">
+										<fb:control>
+											<Select id="sTeam" change="onSelectChange" forceSelection="true"></Select>
+										</fb:control>
+									</fb:FilterItem>
+									<fb:FilterItem name="C" label="other" id="filterItem3" visible="false">
+										<fb:control>
+											<Select id="sOther" change="onSelectChange" forceSelection="true">
+												<core:Item key="" text="All"/>
+											</Select>
+										</fb:control>
+									</fb:FilterItem>
+								</fb:filterItems>
+							</fb:FilterBar>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+					<Table headerDesign="Standard" noDataText="No data" items="{path: '/EMPInfoSet', sorter: { path: 'Employeeid' }}" growing="true"
+						growingScrollToLoad="true" id="table" width="auto" delete="deleteData" growingThreshold="10">
+						<columns>
+							<Column hAlign="Center">
+								<header>
+									<Label text="Photo"/>
+								</header>
+							</Column>
+							<Column hAlign="Center">
+								<header>
+									<Label text="Name"/>
+								</header>
+							</Column>
+							<Column hAlign="Center">
+								<header>
+									<Label text="Country"/>
+								</header>
+							</Column>
+							<Column hAlign="Center">
+								<header>
+									<Label text="Team"/>
+								</header>
+							</Column>
+							<Column hAlign="Center">
+								<header>
+									<Label text="Pronunciation"/>
+								</header>
+							</Column>
+							<Column hAlign="Center" visible="false">
+								<header>
+									<Label text="delete"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem id="ColumnItem" press="onpress" vAlign="Middle" type="Active">
+								<cells>
+									<Image src="/AZSAP_S4/sap/opu/odata/SAP/ZEMP_NEW_SRV/EMPphotoSet('{Employeeid}')/$value" height="60px"/>
+									<!--<Text text = "{Employeeid}" textAlign="Center"/>-->
+									<Text text="{Englishname}" textAlign="Center"/>
+									<Text text="{Country}" textAlign="Center"/>
+									<Text text="{Team}" textAlign="Center"/>
+									<Button icon="sap-icon://headset" btndata:voice="{voice}" btndata:test="{Englishname}" btndata:empid="{Employeeid}" press="onButtonPress"
+										id="btn"/>
+									<Button icon="sap-icon://delete" press="deleteEmployeeInfo" id="delete"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</f:content>
+				
+		<!--footer code -->
+		<!--<f:footer>-->
+		<!--		<OverflowToolbar>-->
+		<!--			<Button icon="sap-icon://message-popup"-->
+		<!--					text="{/messagesLength}"-->
+		<!--					type="Emphasized"-->
+		<!--					press="onMessageButtonPress"-->
+		<!--					visible="{= !!${/messagesLength}}"/>-->
+		<!--			<ToolbarSpacer/>-->
+		<!--			<Button type="Accept" text="Accept"/>-->
+		<!--			<Button type="Reject" text="Reject"/>-->
+		<!--		</OverflowToolbar>-->
+		<!--	</f:footer>-->
+			</f:DynamicPage>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,49 @@
+{
+  "authenticationMethod": "none",
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/AZSAP_S4",
+      "target": {
+        "type": "destination",
+        "name": "AZSAP_S4"
+      },
+      "description": "AZSAP_S4"
+    }
+  ],
+  "sendWelcomeFileRedirect": true,
+  "headerWhiteList": [
+    "slug",
+    "x-csrf-token",
+    "semanticobjecttype",
+    "documenttype",
+    "documentNumber",
+    "documentVersion",
+    "documentPart",
+    "customStuff",
+    "ApplicationId",
+    "FileID",
+    "CheckIn",
+    "CheckInAsNewVersion",
+    "CheckOut",
+    "markfordeletion"
+  ]
+}

@@ -1,0 +1,77 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="ApsolutEmployee.controller.Edit" displayBlock="true" xmlns:core="sap.ui.core">
+	<App id="Edit">
+		<Page showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
+			<content>
+				<Image src="image/All.png" class="left"></Image>
+				<Panel id="employeePanel" width="auto" class="">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>EmployeeID} {Pid}" level="H2"/>
+							<ToolbarSpacer/>
+							<!--<Button text="{i18n>Edit}" press="onEdit"></Button>-->
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<f:SimpleForm id="simpleFormChange" title="" editable="true" class="editableForm" layout="ResponsiveGridLayout" labelSpanXL="4"
+							labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+							columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="{i18n>EmployeeID}"/>
+								<Input value="{Pid}" enabled="false"/>
+								<Label text="{i18n>EnglishName}"/>
+								<Input value="{parts:[{path:'EnglishName'}], type:'sap.ui.model.type.String'}" enabled="true" change="onChangeEnglishName"/>
+								<Label text="{i18n>ChinsesName}"/>
+								<Input value="{parts:[{path:'ChineseName'}], type:'sap.ui.model.type.String', constrains:{minLength : 2} }" change="onChangeChineseName"/>
+								<Label text="{i18n>Country}"/>
+								<Select>
+									<items>
+										<core:Item text="{Country}"/>
+										<core:Item text="China"/>
+										<core:Item text="Germany"/>
+										<core:Item text="India"/>
+										<core:Item text="United Kingdom"/>
+										<core:Item text="Spain"/>
+									</items>
+								</Select>
+								<Label text="{i18n>Team}"/>
+								<Input value="{Team}" change="onChangeTeam"/>
+								<Label text="{i18n>Report}"/>
+								<Input value="{Report to}"/>
+							</f:content>
+						</f:SimpleForm>
+					</content>
+				</Panel>
+			</content>
+			<footer>
+				<Toolbar>
+					<!--<Button icon="sap-icon://message-popup" type="Emphasized"-->
+					<!--	press="handleMessagePopoverPress" visible="true"/>-->
+					<ToolbarSpacer/>
+					<Button  text="Submit" type="Accept" press="onSubmit" id="oSubmitBtn"></Button>
+					<Button  text="Cancel" type="Reject"  press="onCancel" id="onCancelBtn"></Button>
+				</Toolbar>
+			</footer>
+			<!--			<footer>-->
+			<!--	<OverflowToolbar id="otbFooter">-->
+			<!--		<ToolbarSpacer/>-->
+			<!--		<Button type="Accept" text="Accept" press="onUpData">-->
+			<!--			<layoutData>-->
+			<!--				<OverflowToolbarLayoutData moveToOverflow="false" />-->
+			<!--				</layoutData>-->
+			<!--		</Button>-->
+			<!--		<Button type="Reject" text="Reject" press="onReject">-->
+			<!--			<layoutData>-->
+			<!--				<OverflowToolbarLayoutData moveToOverflow="false" />-->
+			<!--				</layoutData>-->
+			<!--		</Button>-->
+			<!--	</OverflowToolbar>-->
+			<!--</footer>-->
+			<!--<Toolbar>-->
+			<!--	<ToolbarSpacer/>-->
+			<!--	<Button text="{i18n>layoutPublishButton}" icon="sap-icon://outbox" type="Accept"/>-->
+			<!--	<Button text="{i18n>layoutDraftButton}" icon="sap-icon://save"/>-->
+			<!--</Toolbar>-->
+		</Page>
+	</App>
+</mvc:View>

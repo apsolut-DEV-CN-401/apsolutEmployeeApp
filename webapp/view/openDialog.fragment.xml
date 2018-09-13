@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="openDialog" title="Message">
+		<beginButton>
+			<Button text="Cancel" press="onCloseDialog"/>
+		</beginButton>
+
+		<content>
+			<Label text=" More features are in development."></Label>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

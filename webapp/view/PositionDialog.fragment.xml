@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Position List"
+		class="sapUiPopupWithPadding"
+		items="{Position>/}"
+		confirm="_handlePositionText"
+		search="PositionDialogSearch"
+		cancel="_handlePositionCancel">
+		<StandardListItem
+			iconDensityAware="false"
+			iconInset="false"
+			title="{Position>name}" />
+	</SelectDialog>
+</core:FragmentDefinition>

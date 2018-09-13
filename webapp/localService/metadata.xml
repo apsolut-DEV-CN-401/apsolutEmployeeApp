@@ -1,0 +1,47 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZCDS_DEMO_CDS" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="ZCDS_DEMOType" sap:label="employee information CDS view demo" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="employeeid"/>
+                    <PropertyRef Name="mandt"/>
+                </Key>
+                <Property Name="employeeid" Type="Edm.Int32" Nullable="false" sap:label="emid" sap:quickinfo="employee number"/>
+                <Property Name="address" Type="Edm.String" MaxLength="120" sap:label="address" sap:quickinfo="ADDRESS"/>
+                <Property Name="report" Type="Edm.String" MaxLength="30" sap:label="report" sap:quickinfo="report to"/>
+                <Property Name="zapposition" Type="Edm.String" MaxLength="50" sap:label="position"/>
+                <Property Name="mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Client"/>
+                <Property Name="englishname" Type="Edm.String" MaxLength="30" sap:label="EN name" sap:quickinfo="employee english name"/>
+                <Property Name="chinesename" Type="Edm.String" MaxLength="30" sap:label="Chinese name" sap:quickinfo="employee chinese name"/>
+                <Property Name="voice" Type="Edm.String" MaxLength="100" sap:label="pronounce" sap:quickinfo="employee voice"/>
+                <Property Name="zapimage" Type="Edm.String" MaxLength="100" sap:label="image"/>
+                <Property Name="team" Type="Edm.String" MaxLength="50" sap:label="team"/>
+                <Property Name="city" Type="Edm.String" MaxLength="40" sap:label="city"/>
+                <Property Name="country" Type="Edm.String" MaxLength="30" sap:label="country"/>
+            </EntityType>
+            <EntityContainer Name="ZCDS_DEMO_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZCDS_DEMO" EntityType="ZCDS_DEMO_CDS.ZCDS_DEMOType" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZCDS_DEMO_CDS.ZCDS_DEMOType">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>employeeid</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCDS_DEMO_CDS/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCDS_DEMO_CDS/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

@@ -1,0 +1,104 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" controllerName="ApsolutEmployee.controller.details" displayBlock="true" xmlns:u="sap.ui.unified">
+	<Page showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveContentPadding" title="Employee Detail">
+		<content>
+			<Image src="image/A.png" class="left"/>
+			<Panel id="employeePanel" width="auto" class="sapUiResponsiveMargin sapUiNoContentPadding">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>EmployeeID} {Employeeid}" level="H2" class="EmployeeTitle"/>
+						<ToolbarSpacer/>
+						<!--<Button text="{i18n>Edit}" press="onEditInfo"/>-->
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<!--<f:SimpleForm  editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"-->
+					<!--	columnsM="1">-->
+					<f:SimpleForm id="SimpleForm" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1"
+						singleContainerFullSize="false">
+						<f:content>
+							<core:Title text="Photo:"/>
+							<Carousel>
+								<Image id="detailImage"  height="130px" src="/AZSAP_S4/sap/opu/odata/SAP/ZEMP_NEW_SRV/EMPphotoSet('{Employeeid}')/$value"/>
+							</Carousel>
+							<core:Title text="Message:"/>
+							<Label text="{i18n>EnglishName}"/>
+							<Text text="{Englishname}"/>
+							<Label text="{i18n>ChineseName}"/>
+							<Text text="{Chinesename}"/>
+							<Label text="{i18n>Team}"/>
+							<Text text="{Team}"/>
+							<Label text="{i18n>Position}"></Label>
+							<Text text="{Zposition}"></Text>
+							<Label text="{i18n>Report}"/>
+							<Text text="{Report}"/>
+							<Label text="{i18n>Address}"/>
+							<Text text="{Address}"/>
+							<Label text="{i18n>City}"/>
+							<Text text="{City}"/>
+						</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm id="SimpleForm2" title="" editable="true" class="editableForm" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+						labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false" visible="false">
+						<f:content>
+							<Label text="{i18n>EmployeeID}"/>
+							<Input value="{Employeeid}" enabled="false" id="updateId"/>
+							<Label text="{i18n>EnglishName}"/>
+							<Input value="" enabled="true" change="onChangeEnglishName" id="EnglishNameInput"/>
+							<Label text="{i18n>ChineseName}"/>
+							<Input value="" change="onChangeChineseName" id="ChineseNameInput"/>
+							<Label text="{i18n>Country}"/>
+							<Input value="" change="onChangeCountry" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleCountryValueHelp"
+								id="CountryInput"/>
+							<Label text="{i18n>Team}"/>
+							<Input value="" change="onChangeTeam" showValueHelp="true" valueHelpRequest="handleTeamValueHelp" id="TeamInput" valueHelpOnly="true"/>
+							<Label text="Position"></Label>
+							<Input value="" change="onChangePosition" showValueHelp="true" valueHelpRequest="handlePositionValueHelp" valueHelpOnly="true"
+								id="PositionInput"></Input>
+							<Label text="{i18n>Report}"/>
+							<Input id="rinput" value="{report}" showValueHelp="true" showSuggestion="true" valueHelpRequest="handleReportValueHelp"
+								change="onnameChange" valueHelpOnly="true" liveChange="onnameLiveChange"/>
+							<Label text="Image file Name"></Label>
+							<!--<Input id="imageInput" value="{zapimage}"/>-->
+							<u:FileUploader id="fileUpload" name="myFileUpload" uploadUrl="/AZSAP_S4/sap/opu/odata/sap/ZEMP_NEW_SRV/EMPInfoSet('{Employeeid}')/Photo" uploadComplete="handleUploadComplete"
+								style="Emphasized" fileType="jpg,pdf,png" width="100%" sendXHR="true" useMultipart="false" typeMissmatch="imageUploadNotMatch">
+								<!--<u:parameters>-->
+								<!--	<u:FileUploaderParameter name="param1" value="Foo"/>-->
+								<!--	<u:FileUploaderParameter name="param2" value="bar"/>-->
+								<!--</u:parameters>-->
+								<!--<u:headerParameters>-->
+								<!--	<u:FileUploaderParameter name="x-csrf-token" value="{uploadParameter>/Token}"/>-->
+								<!--	<u:FileUploaderParameter name="slug" value="{uploadParameter>/slug}"/>-->
+								<!--</u:headerParameters>-->
+							</u:FileUploader>
+							<Label text="Pronunciation file Name"/>
+							<u:FileUploader id="fileUpload2" name="myFileUpload" uploadUrl="/AZSAP_S4/sap/opu/odata/SAP/ZEMP_NEW_SRV/EMPInfoSet('{Employeeid}')/Media" uploadComplete="" change=""
+								style="Emphasized" fileType="mp3" width="100%" sendXHR="true" useMultipart="false" typeMissmatch="mediaUploadNotMatch">
+								<!--<u:parameters>-->
+								<!--	<u:FileUploaderParameter name="param3" value="Foo"/>-->
+								<!--	<u:FileUploaderParameter name="param4" value="bar"/>-->
+								<!--</u:parameters>-->
+								<!--<u:headerParameters>-->
+								<!--	<u:FileUploaderParameter name="headerParam3" value="Foo"/>-->
+								<!--	<u:FileUploaderParameter name="headerParam4" value="bar"/>-->
+								<!--</u:headerParameters>-->
+							</u:FileUploader>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Toolbar>
+				<!--<Button icon="sap-icon://message-popup" type="Emphasized"-->
+				<!--	press="handleMessagePopoverPress" visible="true"/>-->
+				<ToolbarSpacer/>
+				<Button text="Edit" type="Accept" press="onEdit" id="onEditBtn" class="EditBtn"></Button>
+				<Button text="Submit" type="Accept" press="onSubmit" id="onSubmitBtn" visible="false"></Button>
+				<Button text="Cancel" type="Reject" press="onCancel" id="onCancelBtn" visible="false"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

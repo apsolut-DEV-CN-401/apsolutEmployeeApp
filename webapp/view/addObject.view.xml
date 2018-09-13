@@ -1,0 +1,68 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="ApsolutEmployee.controller.addObject" displayBlock="true" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<App id="addObject">
+		<Page showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
+			<content>
+				<!--<Image src="image/All.png" class="left"></Image>-->
+				<Panel id="employeePanel" width="auto">
+					<content>
+						<f:SimpleForm id="SimpleForm2" title="Create Employee" editable="true" class="editableForm" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+							labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="1"
+							columnsL="1" columnsM="1" singleContainerFullSize="false" visible="true">
+							<f:content>
+								<!--<Label text="{i18n>EmployeeID}"/>-->
+								<!--<Input value="" enabled="false" id="empId"/>-->
+								<Label text="{i18n>EnglishName}"/>
+								<Input value="" enabled="true" change="onChangeEnglishName" id="EnglishNameInput"/>
+								<Label text="{i18n>ChinsesName}"/>
+								<Input value="" change="onChangeChineseName" id="ChineseNameInput"/>
+								<Label text="{i18n>Country}"/>
+								<Input value="" change="onChangeCountry" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleCountryValueHelp"
+									id="CountryInput"/>
+								<Label text="{i18n>Team}"/>
+								<Input value="" change="onChangeTeam" showValueHelp="true" valueHelpRequest="handleTeamValueHelp" id="TeamInput" valueHelpOnly="true"/>
+								<Label text="Position"></Label>
+								<Input value="" change="onChangePosition" showValueHelp="true" valueHelpRequest="handlePositionValueHelp" valueHelpOnly="true"
+									id="PositionInput"></Input>
+								<Label text="{i18n>Report}"/>
+								<Input id="rinput" value="" showValueHelp="true" showSuggestion="true" valueHelpRequest="handleReportValueHelp" change="onnameChange"
+									valueHelpOnly="true" liveChange="onnameLiveChange"/>
+								<Label text="Image file Name"></Label>
+								<!--<Input id="imageInput" value="{zapimage}"/>-->
+								<u:FileUploader id="fileUpload" name="myFileUpload" uploadComplete="handleUploadComplete" change="handleValueChange" style="Emphasized"
+									fileType="jpg,png" sendXHR="true" useMultipart="false" width="100%">
+									<!--<u:parameters>-->
+									<!--	<u:FileUploaderParameter name="param1" value="Foo"/>-->
+									<!--	<u:FileUploaderParameter name="param2" value="bar"/>-->
+									<!--</u:parameters>-->
+									<!--<u:headerParameters>-->
+									<!--	<u:FileUploaderParameter name="x-csrf-token" value="{uploadParameter>Token}"/>-->
+									<!--	<u:FileUploaderParameter name="slug" value="{uploadParameter>slug}"/>-->
+									<!--</u:headerParameters>-->
+								</u:FileUploader>
+								<Label text="Pronunciation file Name"/>
+								<u:FileUploader id="fileUpload2" name="myFileUpload2" uploadComplete="" change="" style="Emphasized" fileType="mp3" width="100%" sendXHR="true" useMultipart="false">
+									<!--<u:parameters>-->
+									<!--	<u:FileUploaderParameter name="param3" value="Foo"/>-->
+									<!--	<u:FileUploaderParameter name="param4" value="bar"/>-->
+									<!--</u:parameters>-->
+									<!--<u:headerParameters>-->
+									<!--	<u:FileUploaderParameter name="headerParam3" value="Foo"/>-->
+									<!--	<u:FileUploaderParameter name="headerParam4" value="bar"/>-->
+									<!--</u:headerParameters>-->
+								</u:FileUploader>
+							</f:content>
+						</f:SimpleForm>
+					</content>
+				</Panel>
+			</content>
+			<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button text="Create" type="Accept" press="addEmployeeInfo" id="createInfo"></Button>
+					<Button text="Cancel" type="Reject" press="onCancel" id="onCancelBtn"></Button>
+				</Toolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

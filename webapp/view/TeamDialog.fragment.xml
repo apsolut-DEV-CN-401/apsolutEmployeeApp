@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Team List"
+		class="TeamDialog"
+		items="{TeamName>/}"
+		confirm="_handleTeamText"
+		search = "teamDialogSearch"
+		cancel="_handleTemaCancel">
+		<StandardListItem
+			iconDensityAware="false"
+			iconInset="false"
+			title="{TeamName>name}" />
+	</SelectDialog>
+</core:FragmentDefinition>
